@@ -34,6 +34,15 @@ interface UpdateHomeParams {
   propertyType?: PropertyType;
 }
 
+export const homeSelect = {
+  id: true,
+  address: true,
+  city: true,
+  price: true,
+  number_of_bathrooms: true,
+  number_of_bedrooms: true,
+};
+
 @Injectable()
 export class HomeService {
   constructor(private readonly prismaService: PrismaService) {}
@@ -41,13 +50,7 @@ export class HomeService {
   async getHomes(filter: GetHomeParam): Promise<HomeResponseDto[]> {
     const homes = await this.prismaService.home.findMany({
       select: {
-        id: true,
-        address: true,
-        city: true,
-        price: true,
-        property_type: true,
-        number_of_bedrooms: true,
-        number_of_bathrooms: true,
+        ...homeSelect,
         images: {
           select: {
             url: true,
@@ -70,7 +73,14 @@ export class HomeService {
   }
 
   async getHomeById(id: number): Promise<HomeResponseDto> {
-    const home = await this.prismaService.home.findFirst({ where: { id } });
+    const home = await this.prismaService.home.findFirst({
+      where: { id },
+      select: {
+        ...homeSelect,
+        images: { select: { url: true } },
+        realtor: { select: { name: true, email: true, phone: true } },
+      },
+    });
 
     if (!home) {
       throw new NotFoundException();
@@ -114,7 +124,7 @@ export class HomeService {
     return new HomeResponseDto(home);
   }
 
-  async updateHome(
+  async updateHomeById(
     id: number,
     {
       address,

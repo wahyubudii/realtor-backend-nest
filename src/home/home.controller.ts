@@ -73,7 +73,7 @@ export class HomeController {
       throw new UnauthorizedException();
     }
 
-    return this.homeService.updateHome(id, body);
+    return this.homeService.updateHomeById(id, body);
   }
 
   @Roles(UserType.REALTOR)
