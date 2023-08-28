@@ -1,0 +1,367 @@
+{
+	"info": {
+		"_postman_id": "b67b2beb-f94d-4389-b8e1-198963725915",
+		"name": "Realtor App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28219549"
+	},
+	"item": [
+		{
+			"name": "Homes",
+			"item": [
+				{
+					"name": "Get All Homes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/home",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"home"
+							],
+							"query": [
+								{
+									"key": "city",
+									"value": "Jakarta",
+									"disabled": true
+								},
+								{
+									"key": "minPrice",
+									"value": "10000000",
+									"disabled": true
+								},
+								{
+									"key": "maxPrice",
+									"value": "200000000",
+									"disabled": true
+								},
+								{
+									"key": "propertyType",
+									"value": "CONDO",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Inquire",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiV2FoeXUgQnVkaSBVdG9tbyIsImlkIjoxNywiaWF0IjoxNjkzMTk2NDczLCJleHAiOjE2OTMyODI4NzN9.b79CEAdf4KZpfRmtIKF_Vq0_aIF4IN-d7e_-Oj5q-TE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"message\": \"Percobaan kedua\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/home/11/inquire",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"home",
+								"11",
+								"inquire"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "View All Messages",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiV2FoeXUgQnVkaSBVdG9tbyIsImlkIjoxOCwiaWF0IjoxNjkzMTk2NDg0LCJleHAiOjE2OTMyODI4ODR9.OGrm7uVvHAew1NG5ZmgqL0aZl8qmKipoulJleJWTOyQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/home/11/messages",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"home",
+								"11",
+								"messages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Home",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiV2FoeXUgQnVkaSBVdG9tbyIsImlkIjoxNywiaWF0IjoxNjkzMTk2NDczLCJleHAiOjE2OTMyODI4NzN9.b79CEAdf4KZpfRmtIKF_Vq0_aIF4IN-d7e_-Oj5q-TE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"address\": \"1111 Jendral Sudirman\",\r\n    \"numberOfBedrooms\": 4,\r\n    \"numberOfBathrooms\": 5,\r\n    \"city\": \"Jakarta\",\r\n    \"price\": 50000000,\r\n    \"landSize\": 3500,\r\n    \"propertyType\": \"CONDO\",\r\n    \"images\": [\r\n        {\r\n            \"url\": \"img5\"\r\n        },\r\n        {\r\n            \"url\": \"img6\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/home",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"home"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Homes By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/home/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"home",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Home",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiV2FoeXUgQnVkaSBVdG9tbyIsImlkIjoxOSwiaWF0IjoxNjkyOTUxOTA3LCJleHAiOjE2OTMwMzgzMDd9.NZ4cmeRF7PR7md1NDWbOk9QR7Wmn-xUlf98R5fhpGrc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/home/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"home",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Home",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiV2FoeXUgQnVkaSBVdG9tbyIsImlkIjoxOSwiaWF0IjoxNjkyOTUxOTA3LCJleHAiOjE2OTMwMzgzMDd9.NZ4cmeRF7PR7md1NDWbOk9QR7Wmn-xUlf98R5fhpGrc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"address\": \"1111 Jendral Sudirman\",\r\n    \"city\": \"Jakarta\",\r\n    \"price\": 150000000,\r\n    \"numberOfBedrooms\": 5,\r\n    \"numberOfBathrooms\": 6,\r\n    \"landSize\": 3500,\r\n    \"propertyType\": \"CONDO\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/home/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"home",
+								"10"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Wahyu Budi Utomo\",\r\n    \"phone\": \"085856196359\",\r\n    \"email\": \"wahyu@gmail.com\",\r\n    \"password\": \"admin123\",\r\n    \"productKey\": \"$2b$10$5lZx6MT9NF0Tpgv1KdlvlO0ouT3weJ1TaE59ssSe.qYoGODXUi/J6\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/signup/ADMIN",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"signup",
+								"ADMIN"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Signin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"wahyu2@gmail.com\",\r\n    \"password\": \"admin123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/signin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Generate Product Key",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"wahyu@gmail.com\",\r\n    \"userType\": \"REALTOR\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/key",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"key"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/auth/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"me"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
