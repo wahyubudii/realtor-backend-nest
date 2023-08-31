@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { HomeService, homeSelect } from './home.service';
-import { PrismaService } from 'src/prisma/prisma.service';
+import { HomeService, homeSelect } from './home.service.js';
+import { PrismaService } from 'src/prisma/prisma.service.js';
 import { PropertyType } from '@prisma/client';
 import { NotFoundException } from '@nestjs/common';
 

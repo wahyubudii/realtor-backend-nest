@@ -11,7 +11,7 @@ import {
   UnauthorizedException,
   UseGuards,
 } from '@nestjs/common';
-import { HomeService } from './home.service';
+import { HomeService } from './home.service.js';
 import {
   CreateHomeDto,
   HomeResponseDto,
@@ -19,8 +19,8 @@ import {
   UpdateHomeDto,
 } from './dto/home.dto';
 import { PropertyType, UserType } from '@prisma/client';
-import { User, UserInfo } from 'src/user/decorators/user.decorator';
-import { Roles } from 'src/decorators/roles.decorator';
+import { User, UserInfo } from 'src/user/decorators/user.decorator.js';
+import { Roles } from 'src/decorators/roles.decorator.js';
 
 @Controller('home')
 export class HomeController {

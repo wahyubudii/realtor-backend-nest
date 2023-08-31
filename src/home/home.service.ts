@@ -1,8 +1,8 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { PrismaService } from 'src/prisma/prisma.service';
-import { HomeResponseDto } from './dto/home.dto';
+import { PrismaService } from 'src/prisma/prisma.service.js';
+import { HomeResponseDto } from './dto/home.dto.js';
 import { PropertyType } from '@prisma/client';
-import { UserInfo } from 'src/user/decorators/user.decorator';
+import { UserInfo } from 'src/user/decorators/user.decorator.js';
 
 interface GetHomeParam {
   city?: string;

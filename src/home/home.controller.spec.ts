@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { HomeController } from './home.controller';
-import { HomeService } from './home.service';
-import { PrismaService } from 'src/prisma/prisma.service';
+import { HomeController } from './home.controller.js';
+import { HomeService } from './home.service.js';
+import { PrismaService } from 'src/prisma/prisma.service.js';
 import { PropertyType } from '@prisma/client';
 import { UnauthorizedException } from '@nestjs/common';
 

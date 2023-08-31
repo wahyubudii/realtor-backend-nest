@@ -1,9 +1,4 @@
-import {
-  CallHandler,
-  ExecutionContext,
-  HttpException,
-  NestInterceptor,
-} from '@nestjs/common';
+import { CallHandler, ExecutionContext, NestInterceptor } from '@nestjs/common';
 import * as jwt from 'jsonwebtoken';
 
 export class UserInterceptor implements NestInterceptor {

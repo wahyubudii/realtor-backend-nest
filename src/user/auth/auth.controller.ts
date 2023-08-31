@@ -9,11 +9,11 @@ import {
   ParseEnumPipe,
   UnauthorizedException,
 } from '@nestjs/common';
-import { AuthService } from './auth.service';
-import { GenerateProductKey, SigninDto, SignupDto } from './dto/auth.dto';
+import { AuthService } from './auth.service.js';
+import { GenerateProductKey, SigninDto, SignupDto } from './dto/auth.dto.js';
 import { UserType } from '@prisma/client';
 import * as bcrypt from 'bcrypt';
-import { User, UserInfo } from '../decorators/user.decorator';
+import { User, UserInfo } from '../decorators/user.decorator.js';
 
 @Controller('auth')
 export class AuthController {
